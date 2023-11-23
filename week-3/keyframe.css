@@ -1,0 +1,179 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+}
+
+.sky {
+  background-color: skyblue;
+  height: 33%;
+
+  /* width: 100%; */
+}
+
+.grass {
+  background-color: seagreen;
+  height: 33%;
+
+  /* width: 100%; */
+}
+
+.road {
+  background-color: gray;
+  height: 33%;
+  width: 100%;
+  position: relative;
+}
+
+.line {
+  border: 5px dashed white;
+  height: 0;
+  width: 100%;
+  position: absolute;
+  top: 45%;
+
+  /* position: absolute;
+  animation-name: character;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite; */
+}
+
+.road img {
+  position: absolute;
+  top: -40px;
+  left: 0;
+}
+
+.img-div {
+  width: 100%;
+  animation: character 3s linear infinite;
+  /* position: absolute;
+  top: -30px;
+  left: 0;
+  animation-name: character;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite; */
+}
+
+@keyframes character {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+/* CSS FOR THE FAN */
+
+.fan {
+  background-color: rgb(134, 47, 200);
+  width: 100%;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fan-container {
+  display: flex;
+  width: 300px;
+  height: 180px;
+  position: relative;
+}
+.fan-container div {
+  width: 50px;
+  height: 180px;
+  border-radius: 8px;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform-origin: center 85%;
+  animation: open 3.5s linear 1s infinite;
+  /* animation-name: open;
+  animation-duration: 4s;
+  animation-timing-function: linear;
+  animation-delay: 1s;
+  animation-iteration-count: infinite; */
+
+  /* transition: all 0.8s linear; */
+  /* transform: translateX(-50%); */
+}
+.red {
+  background-color: red;
+  z-index: 5;
+}
+.orange {
+  background-color: orange;
+}
+.yellow {
+  background-color: yellow;
+}
+
+.lemon {
+  background-color: lime;
+}
+.blue {
+  background-color: blue;
+}
+.brown {
+  background-color: brown;
+}
+
+.red::before {
+  content: " ";
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: white;
+  z-index: 6;
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* .fan-container:hover .red {
+  transform: translate(-50%) rotate(75deg);
+}
+.fan-container:hover .orange {
+  transform: translateX(-50%) rotate(45deg);
+}
+.fan-container:hover .yellow {
+  transform: translateX(-50%) rotate(15deg);
+}
+.fan-container:hover .brown {
+  transform: translateX(-50%) rotate(-75deg);
+}
+.fan-container:hover .blue {
+  transform: translateX(-50%) rotate(-45deg);
+}
+.fan-container:hover .lemon {
+  transform: translateX(-50%) rotate(-15deg);
+} */
+
+@keyframes open {
+  0% {
+    transform: translateX(-50%) rotate(0);
+  }
+
+  15% {
+    transform: translateX(-50%) rotate(calc(15deg * var(--i)));
+  }
+  60% {
+    transform: translateX(-50%) rotate(calc(15deg * var(--i)));
+  }
+
+  75% {
+    transform: translateX(-50%) rotate(0);
+  }
+  100% {
+    transform: translateX(-50%) rotate(0);
+  }
+}
